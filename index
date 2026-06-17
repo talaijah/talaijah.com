@@ -1,0 +1,728 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="TALAIJAH offers web design, branding, digital marketing, and creative business solutions for small businesses."
+  />
+  <title>TALAIJAH | Web Design, Branding & Digital Marketing</title>
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --cream: #faf9f7;
+      --soft-cream: #f3eee8;
+      --white: #ffffff;
+      --charcoal: #1f1f1f;
+      --black: #0f0f0f;
+      --muted: #6f6862;
+      --line: #ded7cf;
+      --gold: #9a7b4f;
+      --shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
+      --radius: 8px;
+      --section-padding: clamp(4.5rem, 8vw, 8rem);
+      --container: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--black);
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 14vw, 9.5rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(2.8rem, 7vw, 5.25rem);
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: clamp(1.7rem, 4vw, 2.25rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+
+    .section-intro p {
+      font-size: 1.05rem;
+    }
+
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 1.25rem 0;
+    }
+
+    .nav {
+      width: min(100% - 2rem, var(--container));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.85rem 1rem;
+      background: rgba(250, 249, 247, 0.86);
+      border: 1px solid rgba(222, 215, 207, 0.72);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(31, 31, 31, 0.04);
+    }
+
+    .logo {
+      width: clamp(130px, 16vw, 180px);
+      height: auto;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.25rem;
+      color: var(--charcoal);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      isolation: isolate;
+      padding: 8rem 1rem 5rem;
+      background:
+        linear-gradient(
+          rgba(250, 249, 247, 0.55),
+          rgba(250, 249, 247, 0.72)
+        ),
+        url("hero-image.png") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 35%;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+      z-index: -1;
+    }
+
+    .hero-content {
+      width: min(100%, 900px);
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .hero-subtitle {
+      margin: 1rem auto 1.25rem;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .hero-text {
+      max-width: 640px;
+      margin: 0 auto 2.25rem;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #4f4944;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.95rem 1.65rem;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-3px);
+      background: transparent;
+      color: var(--black);
+      box-shadow: var(--shadow);
+    }
+
+    section {
+      padding: var(--section-padding) 0;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .about-image {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--soft-cream);
+    }
+
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .about-copy p + p {
+      margin-top: 1.2rem;
+    }
+
+    .services,
+    .process {
+      background: var(--white);
+    }
+
+    .cards-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card,
+    .feature-card,
+    .timeline-step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(250, 249, 247, 0.72);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .card {
+      padding: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .card:hover,
+    .feature-card:hover,
+    .timeline-step:hover {
+      transform: translateY(-6px);
+      border-color: rgba(154, 123, 79, 0.45);
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .service-list {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 1.25rem;
+    }
+
+    .service-list li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .service-list li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      margin-top: 0.7rem;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .why-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .feature-card {
+      padding: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.75rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+      counter-reset: process;
+    }
+
+    .timeline-step {
+      counter-increment: process;
+      position: relative;
+      padding: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .timeline-step::before {
+      content: "0" counter(process);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.3rem;
+      line-height: 1;
+      color: var(--gold);
+    }
+
+    .timeline-step h3 {
+      margin-bottom: 0;
+      font-size: 1.8rem;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .section-intro {
+      margin-inline: auto;
+    }
+
+    .email-link {
+      display: inline-flex;
+      margin-top: 1.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.75rem, 6vw, 3.5rem);
+      line-height: 1.1;
+      color: var(--black);
+      border-bottom: 1px solid currentColor;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .email-link:hover,
+    .email-link:focus-visible {
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .site-footer {
+      padding: 2.5rem 1rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--black);
+    }
+
+    .footer-note {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    @media (min-width: 640px) {
+      .cards-grid,
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 780px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .about-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: clamp(3rem, 7vw, 6rem);
+      }
+
+      .about-image {
+        order: 1;
+      }
+
+      .about-copy {
+        order: 2;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .timeline-step {
+        min-height: 230px;
+      }
+    }
+
+    @media (max-width: 779px) {
+      .nav {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 92vh;
+      }
+
+      .hero-subtitle {
+        letter-spacing: 0.08em;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <nav class="nav">
+      <a href="#top" aria-label="TALAIJAH home">
+        <img class="logo" src="logo.png" alt="TALAIJAH" />
+      </a>
+
+      <ul class="nav-links" aria-label="Main menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="TALAIJAH web design, branding, and digital marketing">
+      <div class="hero-content">
+        <h1>TALAIJAH</h1>
+        <p class="hero-subtitle">Web Design • Branding • Digital Marketing</p>
+        <p class="hero-text">
+          Helping small businesses build a professional online presence through
+          strategic design, branding, and marketing solutions.
+        </p>
+        <a class="button" href="#contact">Work With Me</a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="headshot.png" alt="Portrait of Talaijah" />
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">About</span>
+          <h2>Hi, I'm Talaijah</h2>
+          <p>
+            I'm a marketing graduate and creative professional who helps
+            businesses strengthen their brand presence through web design,
+            branding, and marketing solutions.
+          </p>
+          <p>
+            With a Diploma in Business Marketing and a Bachelor of Commerce
+            (Honours) in Marketing, I combine creative design with marketing
+            strategy to help businesses build professional brands, attract
+            customers, and grow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Services</span>
+          <h2>Creative Business Solutions</h2>
+          <p>
+            Thoughtful design and marketing support for small businesses ready
+            to look professional, communicate clearly, and grow with intention.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Web Design</h3>
+            <ul class="service-list">
+              <li>Business Websites</li>
+              <li>Landing Pages</li>
+              <li>Portfolio Websites</li>
+              <li>Website Updates</li>
+              <li>Mobile Optimization</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Branding</h3>
+            <ul class="service-list">
+              <li>Logo Design</li>
+              <li>Brand Identity</li>
+              <li>Business Cards</li>
+              <li>Email Signatures</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Marketing Materials</h3>
+            <ul class="service-list">
+              <li>Flyers</li>
+              <li>Brochures</li>
+              <li>Menus</li>
+              <li>Banners</li>
+              <li>Social Media Graphics</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Why Work With Me</span>
+          <h2 id="why-heading">Strategy Meets Style</h2>
+          <p>
+            Every project is shaped with both creative direction and business
+            purpose, so your brand can feel elevated while still working hard.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="feature-card">
+            <h3>Marketing Background</h3>
+            <p>
+              Built on formal marketing education and a clear understanding of
+              how businesses attract and connect with customers.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Strategic Design</h3>
+            <p>
+              Design decisions are guided by your goals, audience, message, and
+              the experience your clients need to trust your brand.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Personalized Service</h3>
+            <p>
+              A collaborative process tailored to your business, your stage of
+              growth, and the materials you need most.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Growth Focused</h3>
+            <p>
+              Professional visuals and marketing assets created to support
+              visibility, credibility, and long-term brand growth.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Process</span>
+          <h2>A Clear Path Forward</h2>
+          <p>
+            From first conversation to final delivery, each step is organized,
+            collaborative, and focused on bringing your brand vision to life.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-step">
+            <h3>Discovery</h3>
+            <p>We clarify your goals, audience, brand direction, and project needs.</p>
+          </article>
+
+          <article class="timeline-step">
+            <h3>Planning</h3>
+            <p>We map out the structure, content, creative direction, and priorities.</p>
+          </article>
+
+          <article class="timeline-step">
+            <h3>Design</h3>
+            <p>Your website, brand assets, or marketing materials begin taking shape.</p>
+          </article>
+
+          <article class="timeline-step">
+            <h3>Revisions</h3>
+            <p>We refine the details so the final result feels polished and aligned.</p>
+          </article>
+
+          <article class="timeline-step">
+            <h3>Delivery</h3>
+            <p>You receive completed files or a ready-to-launch web presence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Contact</span>
+          <h2>Let's Work Together</h2>
+          <p>
+            Whether you're launching a new business, refreshing your brand, or
+            creating marketing materials, I'd love to help.
+          </p>
+          <a class="email-link" href="mailto:hello@talaijah.com">
+            hello@talaijah.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-brand">TALAIJAH</p>
+    <p class="footer-note">Web Design • Branding • Digital Marketing</p>
+  </footer>
+</body>
+</html>
+```
