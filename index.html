@@ -25,8 +25,8 @@
       --accent-dark: #202a27;
       --shadow: 0 18px 42px rgba(32, 35, 33, 0.09);
       --radius: 8px;
-      --container: 1160px;
-      --section-space: clamp(3.25rem, 6vw, 5.25rem);
+      --container: 1360px;
+      --section-space: clamp(3rem, 5vw, 4.75rem);
     }
 
     * {
@@ -63,7 +63,7 @@
     }
 
     .container {
-      width: min(100% - 2rem, var(--container));
+      width: min(100% - clamp(1.25rem, 4vw, 4rem), var(--container));
       margin-inline: auto;
     }
 
@@ -77,19 +77,19 @@
     }
 
     h1 {
-      font-size: clamp(4.25rem, 13vw, 9rem);
+      font-size: clamp(4.4rem, 11vw, 10rem);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     h2 {
-      font-size: clamp(2.45rem, 6vw, 4.65rem);
+      font-size: clamp(2.35rem, 5vw, 4.35rem);
       margin-bottom: 1rem;
     }
 
     h3 {
-      font-size: clamp(1.65rem, 3vw, 2.15rem);
-      margin-bottom: 0.9rem;
+      font-size: clamp(1.6rem, 2.6vw, 2.05rem);
+      margin-bottom: 0.85rem;
     }
 
     p {
@@ -108,7 +108,7 @@
     }
 
     .section-intro {
-      max-width: 680px;
+      max-width: 720px;
       margin-bottom: 2rem;
     }
 
@@ -122,7 +122,7 @@
     }
 
     .nav {
-      min-height: 76px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -130,14 +130,14 @@
     }
 
     .logo {
-      width: clamp(128px, 15vw, 168px);
+      width: clamp(128px, 13vw, 170px);
       height: auto;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(1rem, 3vw, 2.25rem);
+      gap: clamp(1rem, 3vw, 2.5rem);
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.15em;
@@ -167,23 +167,36 @@
     }
 
     .hero {
-      padding: clamp(2rem, 5vw, 4.25rem) 0 var(--section-space);
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: clamp(2rem, 6vw, 5rem);
+      min-height: calc(100vh - 74px);
+      display: flex;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(250, 249, 247, 0.94) 0%,
+          rgba(250, 249, 247, 0.86) 30%,
+          rgba(250, 249, 247, 0.48) 55%,
+          rgba(250, 249, 247, 0.12) 100%
+        ),
+        url("hero-image.png");
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+      padding: clamp(4rem, 8vw, 7rem) 0;
     }
 
     .hero-copy {
-      max-width: 660px;
+      width: min(100%, 720px);
+      position: relative;
+      z-index: 1;
     }
 
     .service-line {
-      margin: 0.65rem 0 1.6rem;
+      margin: 0.65rem 0 1.55rem;
       color: var(--charcoal);
-      font-size: clamp(0.82rem, 1.5vw, 1rem);
+      font-size: clamp(0.82rem, 1.3vw, 1rem);
       font-weight: 600;
       letter-spacing: 0.19em;
       text-transform: uppercase;
@@ -192,25 +205,25 @@
     .hero-divider {
       width: 74px;
       height: 1px;
-      margin-bottom: 1.65rem;
+      margin-bottom: 1.55rem;
       background: var(--ink);
     }
 
     .hero-heading {
-      max-width: 610px;
-      margin-bottom: 1.2rem;
+      max-width: 650px;
+      margin-bottom: 1.15rem;
       font-family: "Cormorant Garamond", serif;
       color: var(--ink);
-      font-size: clamp(2.65rem, 6.4vw, 5.65rem);
+      font-size: clamp(2.75rem, 5.8vw, 5.9rem);
       font-weight: 500;
       line-height: 0.98;
     }
 
     .hero-text {
-      max-width: 540px;
+      max-width: 560px;
       margin-bottom: 1.9rem;
       color: #4f4c47;
-      font-size: clamp(1rem, 1.7vw, 1.12rem);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
     }
 
     .button {
@@ -244,19 +257,6 @@
       box-shadow: var(--shadow);
     }
 
-    .hero-image {
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: var(--surface-soft);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-image img {
-      width: 100%;
-      aspect-ratio: 4 / 3.15;
-      object-fit: cover;
-    }
-
     section {
       padding: var(--section-space) 0;
     }
@@ -268,7 +268,7 @@
     }
 
     .about-image {
-      max-width: 430px;
+      max-width: 400px;
       overflow: hidden;
       border-radius: var(--radius);
       background: var(--surface-soft);
@@ -282,7 +282,7 @@
     }
 
     .about-copy {
-      max-width: 650px;
+      max-width: 690px;
     }
 
     .about-copy p + p {
@@ -424,12 +424,8 @@
     }
 
     @media (min-width: 840px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
-      }
-
       .about-grid {
-        grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+        grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
       }
 
       .about-image {
@@ -443,27 +439,25 @@
       }
     }
 
-    @media (max-width: 699px) {
-      .nav {
-        min-height: 70px;
-      }
-
-      .nav-links {
-        gap: 0.8rem;
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
-      }
-
+    @media (max-width: 760px) {
       .hero {
-        padding-top: 2rem;
+        min-height: auto;
+        background-image:
+          linear-gradient(
+            rgba(250, 249, 247, 0.9),
+            rgba(250, 249, 247, 0.9)
+          ),
+          url("hero-image.png");
+        background-position: center;
+        padding: 4rem 0;
       }
 
-      .hero-image {
-        order: -1;
+      .hero-copy {
+        width: 100%;
       }
 
-      .hero-image img {
-        aspect-ratio: 4 / 3.4;
+      .service-line {
+        letter-spacing: 0.12em;
       }
 
       .about-image {
@@ -471,11 +465,7 @@
       }
     }
 
-    @media (max-width: 460px) {
-      .container {
-        width: min(100% - 1.25rem, var(--container));
-      }
-
+    @media (max-width: 520px) {
       .nav {
         flex-direction: column;
         justify-content: center;
@@ -487,10 +477,17 @@
       .nav-links {
         width: 100%;
         justify-content: center;
+        gap: 1rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
       }
 
-      .service-line {
-        letter-spacing: 0.12em;
+      h1 {
+        font-size: clamp(3.8rem, 17vw, 5rem);
+      }
+
+      .hero-heading {
+        font-size: clamp(2.45rem, 12vw, 3.6rem);
       }
     }
 
@@ -515,18 +512,18 @@
           <img class="logo" src="logo.png" alt="TALAIJAH" />
         </a>
 
-        <ul class="nav-links" aria-label="Main menu">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <ul class="nav-links" aria-label="Main menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
   </header>
 
   <main id="top">
     <section class="hero" aria-label="TALAIJAH web design, branding, and marketing">
-      <div class="container hero-grid">
+      <div class="container">
         <div class="hero-copy">
           <h1>TALAIJAH</h1>
           <p class="service-line">Web Design • Branding • Marketing</p>
@@ -538,144 +535,140 @@
           </p>
           <a class="button" href="#contact">Work With Me</a>
         </div>
-
-        <div class="hero-image">
-          <img src="hero-image.png" alt="Minimal workspace with laptop and brand materials" />
-        </div>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div class="about-image">
-          <img src="headshot.png" alt="Portrait of Talaijah" />
-        </div>
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-image">
+      <img src="headshot.png" alt="Portrait of Talaijah" />
+    </div>
 
-        <div class="about-copy">
-          <span class="eyebrow">About</span>
-          <h2>Hi, I'm Talaijah</h2>
-          <p>
-            I'm a marketing graduate and creative professional who helps
-            businesses strengthen their brand presence through web design,
-            branding, and marketing solutions.
-          </p>
-          <p>
-            With a Diploma in Business Marketing and a Bachelor of Commerce
-            (Honours) in Marketing, I combine creative design with marketing
-            strategy to help businesses build professional brands, attract
-            customers, and grow.
-          </p>
-        </div>
-      </div>
-    </section>
+    <div class="about-copy">
+      <span class="eyebrow">About</span>
+      <h2>Hi, I'm Talaijah</h2>
+      <p>
+        I'm a marketing graduate and creative professional who helps
+        businesses strengthen their brand presence through web design,
+        branding, and marketing solutions.
+      </p>
+      <p>
+        With a Diploma in Business Marketing and a Bachelor of Commerce
+        (Honours) in Marketing, I combine creative design with marketing
+        strategy to help businesses build professional brands, attract
+        customers, and grow.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-intro">
-          <span class="eyebrow">Services</span>
-          <h2>Creative Business Solutions</h2>
-          <p>
-            Professional design and marketing support for businesses that want
-            to look credible, communicate clearly, and grow with intention.
-          </p>
-        </div>
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Services</span>
+      <h2>Creative Business Solutions</h2>
+      <p>
+        Professional design and marketing support for businesses that want
+        to look credible, communicate clearly, and grow with intention.
+      </p>
+    </div>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Website Design</h3>
-            <ul class="service-list">
-              <li>Business Websites</li>
-              <li>Landing Pages</li>
-              <li>Portfolio Websites</li>
-              <li>Website Updates</li>
-              <li>Mobile Optimization</li>
-            </ul>
-          </article>
+    <div class="cards-grid">
+      <article class="card">
+        <h3>Website Design</h3>
+        <ul class="service-list">
+          <li>Business Websites</li>
+          <li>Landing Pages</li>
+          <li>Portfolio Websites</li>
+          <li>Website Updates</li>
+          <li>Mobile Optimization</li>
+        </ul>
+      </article>
 
-          <article class="card">
-            <h3>Brand Identity</h3>
-            <ul class="service-list">
-              <li>Logo Design</li>
-              <li>Brand Identity</li>
-              <li>Business Cards</li>
-              <li>Email Signatures</li>
-            </ul>
-          </article>
+      <article class="card">
+        <h3>Brand Identity</h3>
+        <ul class="service-list">
+          <li>Logo Design</li>
+          <li>Brand Identity</li>
+          <li>Business Cards</li>
+          <li>Email Signatures</li>
+        </ul>
+      </article>
 
-          <article class="card">
-            <h3>Marketing Materials</h3>
-            <ul class="service-list">
-              <li>Flyers</li>
-              <li>Brochures</li>
-              <li>Menus</li>
-              <li>Banners</li>
-              <li>Social Media Graphics</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+      <article class="card">
+        <h3>Marketing Materials</h3>
+        <ul class="service-list">
+          <li>Flyers</li>
+          <li>Brochures</li>
+          <li>Menus</li>
+          <li>Banners</li>
+          <li>Social Media Graphics</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section class="why" aria-labelledby="why-heading">
-      <div class="container">
-        <div class="section-intro">
-          <span class="eyebrow">Why Work With Me</span>
-          <h2 id="why-heading">Strategy Meets Design</h2>
-          <p>
-            Each project is shaped with a thoughtful balance of creative
-            direction, marketing insight, and business purpose.
-          </p>
-        </div>
+<section class="why" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Why Work With Me</span>
+      <h2 id="why-heading">Strategy Meets Design</h2>
+      <p>
+        Each project is shaped with a thoughtful balance of creative
+        direction, marketing insight, and business purpose.
+      </p>
+    </div>
 
-        <div class="why-grid">
-          <article class="feature-card">
-            <h3>Marketing Background</h3>
-            <p>
-              Built on formal marketing education and a clear understanding of
-              how businesses connect with customers.
-            </p>
-          </article>
+    <div class="why-grid">
+      <article class="feature-card">
+        <h3>Marketing Background</h3>
+        <p>
+          Built on formal marketing education and a clear understanding of
+          how businesses connect with customers.
+        </p>
+      </article>
 
-          <article class="feature-card">
-            <h3>Strategic Design</h3>
-            <p>
-              Design choices are guided by your goals, audience, message, and
-              the trust your brand needs to build.
-            </p>
-          </article>
+      <article class="feature-card">
+        <h3>Strategic Design</h3>
+        <p>
+          Design choices are guided by your goals, audience, message, and
+          the trust your brand needs to build.
+        </p>
+      </article>
 
-          <article class="feature-card">
-            <h3>Personalized Service</h3>
-            <p>
-              A collaborative experience tailored to your business, your stage
-              of growth, and your practical needs.
-            </p>
-          </article>
+      <article class="feature-card">
+        <h3>Personalized Service</h3>
+        <p>
+          A collaborative experience tailored to your business, your stage
+          of growth, and your practical needs.
+        </p>
+      </article>
 
-          <article class="feature-card">
-            <h3>Growth Focused</h3>
-            <p>
-              Professional visuals and marketing assets created to support
-              visibility, credibility, and long-term growth.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <article class="feature-card">
+        <h3>Growth Focused</h3>
+        <p>
+          Professional visuals and marketing assets created to support
+          visibility, credibility, and long-term growth.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-intro">
-          <span class="eyebrow">Contact</span>
-          <h2>Let's Work Together</h2>
-          <p>
-            Whether you're launching a new business, refreshing your brand, or
-            creating marketing materials, I'd love to help.
-          </p>
-          <a class="email-link" href="mailto:hello@talaijah.com">hello@talaijah.com</a>
-        </div>
-      </div>
-    </section>
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's Work Together</h2>
+      <p>
+        Whether you're launching a new business, refreshing your brand, or
+        creating marketing materials, I'd love to help.
+      </p>
+      <a class="email-link" href="mailto:hello@talaijah.com">hello@talaijah.com</a>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer class="site-footer">
