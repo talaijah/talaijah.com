@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Selected Work | TALAIJAH</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --background:#faf9f7;
+  --ink:#202321;
+  --charcoal:#303330;
+  --muted:#68645f;
+  --line:#ded8d0;
+  --accent:#6f5b45;
+  --container:1200px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Inter",sans-serif;
+  background:var(--background);
+  color:var(--ink);
+  line-height:1.7;
+}
+
+img{
+  display:block;
+  width:100%;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(100% - 2rem,var(--container));
+  margin:auto;
+}
+
+header{
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  width:160px;
+}
+
+.back-home{
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.back-home:hover{
+  color:var(--accent);
+}
+
+.hero{
+  padding:6rem 0;
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-block;
+  color:var(--accent);
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:1rem;
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(3rem,7vw,5.5rem);
+  line-height:1;
+  font-weight:600;
+  margin-bottom:1rem;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+}
+
+.project{
+  padding:5rem 0;
+  border-top:1px solid var(--line);
+}
+
+.project-grid{
+  display:grid;
+  gap:3rem;
+  align-items:center;
+}
+
+.project-image{
+  border:1px solid var(--line);
+  background:#f2eee8;
+}
+
+.project-content h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(2rem,4vw,3rem);
+  margin-bottom:1rem;
+}
+
+.project-number{
+  display:block;
+  margin-bottom:1rem;
+  color:var(--accent);
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.2em;
+}
+
+.project-content p{
+  color:var(--muted);
+  margin-bottom:1.5rem;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-bottom:2rem;
+}
+
+.tags span{
+  border:1px solid var(--line);
+  padding:.5rem .8rem;
+  font-size:.85rem;
+}
+
+.project-link{
+  display:inline-block;
+  font-weight:600;
+  color:var(--accent);
+}
+
+.project-link:hover{
+  opacity:.7;
+}
+
+.closing{
+  text-align:center;
+  padding:5rem 0;
+  border-top:1px solid var(--line);
+}
+
+.closing p{
+  color:var(--muted);
+}
+
+@media (min-width:900px){
+
+  .project-grid{
+    grid-template-columns:1.2fr 1fr;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html">
+      <img src="logo.png" alt="TALAIJAH" class="logo">
+    </a>
+
+    <a href="index.html" class="back-home">
+      ← Back Home
+    </a>
+
+  </div>
+</header>
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="eyebrow">Selected Work</span>
+
+    <h1>
+      A selection of websites I've designed, written, and developed.
+    </h1>
+
+    <p>
+      Each project combines design, branding, copywriting, and strategy
+      to help businesses communicate clearly and present themselves professionally online.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="project">
+
+  <div class="container project-grid">
+
+    <div class="project-image">
+      <img src="talaijah-project.jpg" alt="TALAIJAH Website">
+    </div>
+
+    <div class="project-content">
+
+      <span class="project-number">01</span>
+
+      <h2>TALAIJAH.COM</h2>
+
+      <p>
+        Personal brand website designed and developed to showcase web design,
+        branding, and marketing services.
+      </p>
+
+      <div class="tags">
+        <span>Web Design</span>
+        <span>Branding</span>
+        <span>Copywriting</span>
+        <span>Development</span>
+      </div>
+
+      <a href="https://talaijah.com" target="_blank" class="project-link">
+        Visit Website →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="project">
+
+  <div class="container project-grid">
+
+    <div class="project-image">
+      <img src="konxepts-project.jpg" alt="KONXEPTS Website">
+    </div>
+
+    <div class="project-content">
+
+      <span class="project-number">02</span>
+
+      <h2>KONXEPTS.COM</h2>
+
+      <p>
+        Corporate consulting website created for a process improvement and logistics company,
+        focused on operational efficiency, business growth, and professional brand presentation.
+      </p>
+
+      <div class="tags">
+        <span>Web Design</span>
+        <span>Branding</span>
+        <span>Copywriting</span>
+        <span>Development</span>
+      </div>
+
+      <a href="https://konxepts.com" target="_blank" class="project-link">
+        Visit Website →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="closing">
+
+  <div class="container">
+
+    <p>
+      More projects coming soon.
+    </p>
+
+  </div>
+
+</section>
+
+</body>
+</html>
