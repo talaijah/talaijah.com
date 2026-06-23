@@ -404,66 +404,92 @@
     }
 
     .site-footer {
-      padding: 3rem 0;
+      padding: clamp(4rem, 8vw, 7rem) 0 2.5rem;
       background: var(--background);
-      border-top: 1px solid rgba(222, 216, 208, 0.8);
+      border-top: 1px solid rgba(111, 91, 69, 0.25);
     }
     
     .footer-inner {
       display: grid;
+      gap: 3rem;
+    }
+    
+    .footer-left {
+      display: grid;
       gap: 1.5rem;
-      text-align: center;
     }
     
     .footer-brand {
       font-family: "Cormorant Garamond", serif;
       color: var(--ink);
-      font-size: 2rem;
-      font-weight: 600;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 500;
+      line-height: 0.85;
       letter-spacing: 0.16em;
     }
     
+    .footer-mark {
+      width: 64px;
+      height: 2px;
+      background: var(--accent);
+    }
+    
     .footer-tagline {
-      margin-top: 0.35rem;
-      color: var(--muted);
-      font-size: 0.9rem;
+      color: var(--charcoal);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      letter-spacing: 0.16em;
     }
     
     .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.9rem 1.5rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      display: grid;
+      gap: 0;
     }
     
     .footer-links a {
-      color: var(--charcoal);
-      transition: color 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid rgba(111, 91, 69, 0.24);
+      color: var(--ink);
+      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: color 0.25s ease, padding-left 0.25s ease;
     }
     
     .footer-links a:hover,
     .footer-links a:focus-visible {
       color: var(--accent);
+      padding-left: 0.35rem;
+    }
+    
+    .footer-links a span:last-child {
+      color: var(--accent);
+      font-size: 1.4rem;
+      letter-spacing: 0;
     }
     
     .footer-copy {
-      color: var(--muted);
-      font-size: 0.82rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(111, 91, 69, 0.22);
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
     }
     
     @media (min-width: 820px) {
       .footer-inner {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
         align-items: center;
-        text-align: left;
+        column-gap: clamp(3rem, 7vw, 6rem);
       }
     
-      .footer-links {
-        justify-content: flex-end;
+      .footer-left {
+        padding-right: clamp(2rem, 5vw, 5rem);
+        border-right: 1px solid rgba(111, 91, 69, 0.22);
       }
     
       .footer-copy {
@@ -741,15 +767,25 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-brand-block">
+    <div class="footer-left">
       <p class="footer-brand">TALAIJAH</p>
+      <div class="footer-mark" aria-hidden="true"></div>
       <p class="footer-tagline">Web Design • Branding • Marketing</p>
     </div>
 
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="https://linktr.ee/talaijah">Recent Work</a>
-      <a href="https://www.linkedin.com/in/talaijah/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="mailto:hello@talaijah.com">hello@talaijah.com</a>
+      <a href="https://linktr.ee/talaijah">
+        <span>Recent Work</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="https://www.linkedin.com/in/talaijah/" target="_blank" rel="noopener noreferrer">
+        <span>LinkedIn</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="mailto:hello@talaijah.com">
+        <span>hello@talaijah.com</span>
+        <span aria-hidden="true">→</span>
+      </a>
     </nav>
 
     <p class="footer-copy">© 2026 TALAIJAH. All rights reserved.</p>
