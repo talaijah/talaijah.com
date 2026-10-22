@@ -588,6 +588,39 @@
         animation-iteration-count: 1 !important;
       }
     }
+  
+/* Portfolio gallery layout */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.work-item {
+  min-width: 0;
+}
+
+.work-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.work-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stack the items on small screens */
+@media (max-width: 600px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 
@@ -653,44 +686,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- A Glimpse of My Work -->
-<section class="work-section" id="work">
-  <div class="container">
-    <div class="work-heading">
-      <span class="eyebrow">A Glimpse of My Work</span>
-      <h2>A little of what I do.</h2>
-      <p>Creative work across web design, branding, and digital marketing.</p>
-    </div>
-
-    <div class="work-grid">
-      <article class="work-item">
-        <div class="work-image">
-          <img src="images/konxepts-website.png" alt="KONXEPTS INC. website design">
-        </div>
-        <h3>Website Design</h3>
-        <p>KONXEPTS INC.</p>
-      </article>
-
-      <article class="work-item">
-        <div class="work-image">
-          <img src="images/rebar-branding.png" alt="Rebar Intact branding design">
-        </div>
-        <h3>Brand Identity</h3>
-        <p>Rebar Intact</p>
-      </article>
-
-      <article class="work-item">
-        <div class="work-image">
-          <img src="images/digital-marketing.png" alt="Social media content design">
-        </div>
-        <h3>Digital Marketing</h3>
-        <p>Social Media Content</p>
-      </article>
-    </div>
-  </div>
-</section>
     
 <section class="services" id="services">
   <div class="container">
@@ -739,6 +734,43 @@
   </div>
 </section>
 
+<!-- A Glimpse of My Work -->
+<section class="work-section" id="work">
+  <div class="container">
+    <div class="work-heading">
+      <span class="eyebrow">A Glimpse of My Work</span>
+      <h2>A little of what I do.</h2>
+      <p>Creative work across web design, branding, and digital marketing.</p>
+    </div>
+
+    <div class="work-grid">
+      <article class="work-item">
+        <div class="work-image">
+          <img src="images/konxepts-website.png" alt="KONXEPTS INC. website design">
+        </div>
+        <h3>Website Design</h3>
+        <p>KONXEPTS INC.</p>
+      </article>
+
+      <article class="work-item">
+        <div class="work-image">
+          <img src="images/rebar-branding.png" alt="Rebar Intact branding design">
+        </div>
+        <h3>Brand Identity</h3>
+        <p>Rebar Intact</p>
+      </article>
+
+      <article class="work-item">
+        <div class="work-image">
+          <img src="images/digital-marketing.png" alt="Social media content design">
+        </div>
+        <h3>Digital Marketing</h3>
+        <p>Social Media Content</p>
+      </article>
+    </div>
+  </div>
+</section>
+    
 <section class="why" aria-labelledby="why-heading">
   <div class="container">
     <div class="section-intro">
