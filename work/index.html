@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore selected website design, branding, and marketing projects by TALAIJAH.">
+  <title>Selected Work | TALAIJAH</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #faf9f7;
+      --surface: #ffffff;
+      --ink: #202321;
+      --muted: #68645f;
+      --line: #ded8d0;
+      --accent: #6f5b45;
+      --radius: 8px;
+      --shadow: 0 18px 42px rgba(32, 35, 33, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--background);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 2.5rem, 1200px);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      background: rgba(250, 249, 247, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      padding: clamp(4rem, 9vw, 7rem) 0 3rem;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      margin: 0.7rem 0 1rem;
+    }
+
+    .intro p {
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem 1.5rem;
+      padding-bottom: 5rem;
+    }
+
+    .project {
+      min-width: 0;
+    }
+
+    .project-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #f2eee8;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.035);
+    }
+
+    .project h2 {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      margin-bottom: 0.35rem;
+    }
+
+    .category {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .description {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 4rem 0;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+    }
+
+    .contact h2 {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.95rem 1.4rem;
+      background: #202a27;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 1.5rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 650px) {
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="../index.html">TALAIJAH</a>
+      <a class="nav-link" href="../index.html">← Back to Home</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="container">
+        <span class="eyebrow">Selected Work</span>
+        <h1>Design With Purpose.</h1>
+        <p>
+          A selection of website design, brand identity, and marketing
+          projects created to help businesses communicate clearly and
+          present themselves with confidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="container projects" aria-label="Selected projects">
+      <article class="project">
+        <div class="project-image">
+          <img src="../konxepts-website.webp" alt="KONXEPTS INC. website design">
+        </div>
+        <p class="category">Website Design</p>
+        <h2>KONXEPTS INC.</h2>
+        <p class="description">
+          Website design focused on presenting the business with a clear,
+          professional online presence.
+        </p>
+      </article>
+
+      <article class="project">
+        <div class="project-image">
+          <img src="../rebar-branding.webp" alt="Rebar Intact brand identity design">
+        </div>
+        <p class="category">Brand Identity</p>
+        <h2>Rebar Intact</h2>
+        <p class="description">
+          Branding design created to give the business a consistent,
+          recognizable visual identity.
+        </p>
+      </article>
+
+      <article class="project">
+        <div class="project-image">
+          <img src="../digital-marketing.webp" alt="Social media marketing content design">
+        </div>
+        <p class="category">Digital Marketing</p>
+        <h2>Social Media Content</h2>
+        <p class="description">
+          Marketing visuals designed to help content feel cohesive,
+          engaging, and aligned with the brand.
+        </p>
+      </article>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <h2>Have a Project in Mind?</h2>
+        <p>Let's discuss how thoughtful design can support your business.</p>
+        <a class="button" href="../index.html#contact">Work With Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 TALAIJAH. All rights reserved.</div>
+  </footer>
+</body>
+</html>
