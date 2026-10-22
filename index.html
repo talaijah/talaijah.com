@@ -590,21 +590,12 @@
     }
   
 /* Portfolio gallery layout */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.work-item {
-  min-width: 0;
-}
-
 .work-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   margin-bottom: 16px;
+  border-radius: var(--radius);
 }
 
 .work-image img {
