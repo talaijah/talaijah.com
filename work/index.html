@@ -4,41 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore selected website design, branding, and marketing projects by TALAIJAH.">
-  <title>Selected Work | TALAIJAH</title>
+  <meta name="description" content="Selected website design, brand identity, and marketing projects by Talaijah.">
+  <title>Selected Work | Talaijah</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --background: #faf9f7;
       --surface: #ffffff;
+      --surface-soft: #f2eee8;
       --ink: #202321;
+      --charcoal: #303330;
       --muted: #68645f;
       --line: #ded8d0;
       --accent: #6f5b45;
-      --radius: 8px;
-      --shadow: 0 18px 42px rgba(32, 35, 33, 0.09);
+      --accent-dark: #202a27;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
-      font-family: "Inter", sans-serif;
+      margin: 0;
       background: var(--background);
       color: var(--ink);
-      line-height: 1.65;
-    }
-
-    img {
-      display: block;
-      width: 100%;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     a {
@@ -46,163 +47,360 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(100% - 2.5rem, 1200px);
-      margin-inline: auto;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .site-header {
-      background: rgba(250, 249, 247, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(250, 249, 247, 0.96);
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
-      min-height: 74px;
+      width: min(1180px, calc(100% - 48px));
+      min-height: 82px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 28px;
     }
 
-    .logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+    .logo img {
+      width: 145px;
+      max-height: 54px;
+      object-fit: contain;
+      object-position: left center;
     }
 
-    .nav-link {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 12px;
     }
 
-    .intro {
-      padding: clamp(4rem, 9vw, 7rem) 0 3rem;
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-contact {
+      padding: 10px 17px;
+      border: 1px solid var(--ink);
+    }
+
+    .page-intro {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 100px 0 76px;
+      border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
+      margin: 0 0 18px;
       color: var(--accent);
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.19em;
       text-transform: uppercase;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
+      margin-top: 0;
       font-family: "Cormorant Garamond", serif;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.05;
     }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      margin: 0.7rem 0 1rem;
+      max-width: 800px;
+      margin-bottom: 22px;
+      font-size: clamp(48px, 7vw, 88px);
+      letter-spacing: -0.035em;
     }
 
-    .intro p {
-      max-width: 620px;
+    .intro-copy {
+      max-width: 570px;
+      margin: 0;
       color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
     }
 
-    .projects {
+    .work-section {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 86px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(38px, 5vw, 56px);
+      letter-spacing: -0.025em;
+    }
+
+    .section-number {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 3rem 1.5rem;
-      padding-bottom: 5rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
 
-    .project {
+    .project-card {
       min-width: 0;
     }
 
     .project-image {
-      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-      border-radius: var(--radius);
-      background: #f2eee8;
-      margin-bottom: 1.2rem;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
     }
 
-    .project-image img {
+    .website-image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .website-image img {
+      width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
+      object-fit: contain;
+      object-position: center;
     }
 
-    .project:hover .project-image img {
-      transform: scale(1.035);
+    .project-info {
+      padding-top: 17px;
     }
 
-    .project h2 {
-      font-size: clamp(1.7rem, 3vw, 2.3rem);
-      margin-bottom: 0.35rem;
-    }
-
-    .category {
+    .project-type {
+      margin: 0 0 5px;
       color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-size: 10px;
+      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 0.6rem;
     }
 
-    .description {
+    .project-info h3 {
+      margin-bottom: 5px;
+      font-size: 29px;
+    }
+
+    .project-info p:last-child {
+      margin: 0;
       color: var(--muted);
-      max-width: 520px;
+      font-size: 12px;
     }
 
-    .contact {
-      text-align: center;
-      padding: 4rem 0;
+    .brand-stack {
+      display: grid;
+      gap: 30px;
+    }
+
+    .brand-board {
+      overflow: hidden;
+      padding: 16px;
       background: var(--surface);
-      border-top: 1px solid var(--line);
+      border: 1px solid var(--line);
+      border-radius: 8px;
     }
 
-    .contact h2 {
-      font-size: clamp(2.4rem, 5vw, 3.5rem);
-      margin-bottom: 0.75rem;
+    .brand-board img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
-    .contact p {
+    .board-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      padding: 16px 2px 0;
+    }
+
+    .board-caption h3 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .board-caption p {
+      margin: 0;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      font-size: 12px;
+    }
+
+    .marketing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      align-items: start;
+    }
+
+    .marketing-image {
+      min-height: 280px;
+      padding: 16px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .marketing-image img {
+      width: 100%;
+      height: auto;
+      max-height: 760px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .marketing-image.portrait img {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .closing {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: clamp(42px, 6vw, 68px);
+    }
+
+    .closing p {
+      max-width: 490px;
+      margin: 0 auto 26px;
+      color: var(--muted);
     }
 
     .button {
       display: inline-block;
-      padding: 0.95rem 1.4rem;
-      background: #202a27;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      padding: 13px 22px;
+      background: var(--accent-dark);
+      color: white;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      transition: background 0.2s ease;
     }
 
-    footer {
-      padding: 1.5rem 0;
-      text-align: center;
+    .button:hover {
+      background: var(--accent);
+    }
+
+    .site-footer {
+      padding: 25px 24px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.8rem;
+      text-align: center;
+      font-size: 11px;
     }
 
-    @media (max-width: 650px) {
-      .projects {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    @media (max-width: 850px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .page-intro {
+        padding-top: 75px;
+      }
+
+      .work-section {
+        padding: 68px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
       .nav {
-        min-height: 68px;
+        width: calc(100% - 32px);
+        min-height: 72px;
+        gap: 14px;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        transition-duration: 0.01ms !important;
+      .logo img {
+        width: 112px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 10px;
+      }
+
+      .nav-contact {
+        padding: 7px 9px;
+      }
+
+      .page-intro,
+      .work-section,
+      .closing {
+        width: calc(100% - 32px);
+      }
+
+      .page-intro {
+        padding: 64px 0 54px;
+      }
+
+      .work-section {
+        padding: 54px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 25px;
+      }
+
+      .project-grid,
+      .marketing-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .brand-board {
+        padding: 9px;
+      }
+
+      .board-caption {
+        display: block;
+      }
+
+      .board-caption p {
+        margin-top: 5px;
+      }
+
+      .marketing-image {
+        padding: 10px;
+      }
+
+      .closing {
+        padding: 68px 0;
       }
     }
   </style>
@@ -210,74 +408,174 @@
 
 <body>
   <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="../index.html">TALAIJAH</a>
-      <a class="nav-link" href="../index.html">← Back to Home</a>
-    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="../index.html" aria-label="Talaijah home">
+        <img src="../logo.png" alt="Talaijah">
+      </a>
+
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#services">Services</a>
+        <a class="nav-contact" href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <div class="container">
-        <span class="eyebrow">Selected Work</span>
-        <h1>Design With Purpose.</h1>
-        <p>
-          A selection of website design, brand identity, and marketing
-          projects created to help businesses communicate clearly and
-          present themselves with confidence.
-        </p>
+    <section class="page-intro">
+      <p class="eyebrow">A selection of my work</p>
+      <h1>Thoughtful design.<br>Meaningful presence.</h1>
+      <p class="intro-copy">
+        A collection of websites, brand identities, and marketing materials
+        created to help businesses express who they are and connect with
+        the people they want to reach.
+      </p>
+    </section>
+
+    <section class="work-section" id="website-design">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / Digital experiences</p>
+          <h2>Website Design</h2>
+        </div>
+        <span class="section-number">03 PROJECTS</span>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image website-image">
+            <img src="konxepts-website.webp" alt="KONXEPTS INC. website design" loading="lazy">
+          </div>
+          <div class="project-info">
+            <p class="project-type">Website Design</p>
+            <h3>KONXEPTS INC.</h3>
+            <p>A considered digital presence for a modern business.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image website-image">
+            <img src="avaclean-website.webp" alt="Ava Clean website design" loading="lazy">
+          </div>
+          <div class="project-info">
+            <p class="project-type">Website Design</p>
+            <h3>Ava Clean</h3>
+            <p>A clean, welcoming presentation for a cleaning brand.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image website-image">
+            <img src="jeanbella-jewelry.webp" alt="Jeanbella Jewelry website design" loading="lazy">
+          </div>
+          <div class="project-info">
+            <p class="project-type">Website Design</p>
+            <h3>Jeanbella Jewelry</h3>
+            <p>An elegant visual direction for a jewelry brand.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="container projects" aria-label="Selected projects">
-      <article class="project">
-        <div class="project-image">
-          <img src="../konxepts-website.webp" alt="KONXEPTS INC. website design">
+    <section class="work-section" id="brand-identity">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / Visual identity</p>
+          <h2>Brand Identity</h2>
         </div>
-        <p class="category">Website Design</p>
-        <h2>KONXEPTS INC.</h2>
-        <p class="description">
-          Website design focused on presenting the business with a clear,
-          professional online presence.
-        </p>
-      </article>
+        <span class="section-number">SELECTED WORK</span>
+      </div>
 
-      <article class="project">
-        <div class="project-image">
-          <img src="../rebar-branding.webp" alt="Rebar Intact brand identity design">
-        </div>
-        <p class="category">Brand Identity</p>
-        <h2>Rebar Intact</h2>
-        <p class="description">
-          Branding design created to give the business a consistent,
-          recognizable visual identity.
-        </p>
-      </article>
+      <div class="brand-stack">
+        <article>
+          <div class="brand-board">
+            <img
+              src="konxepts-brand-board.webp"
+              alt="KONXEPTS brand identity presentation"
+              loading="lazy"
+            >
+          </div>
+          <div class="board-caption">
+            <h3>KONXEPTS</h3>
+            <p>Brand identity and visual direction</p>
+          </div>
+        </article>
 
-      <article class="project">
-        <div class="project-image">
-          <img src="../digital-marketing.webp" alt="Social media marketing content design">
-        </div>
-        <p class="category">Digital Marketing</p>
-        <h2>Social Media Content</h2>
-        <p class="description">
-          Marketing visuals designed to help content feel cohesive,
-          engaging, and aligned with the brand.
-        </p>
-      </article>
+        <article>
+          <div class="brand-board">
+            <img
+              src="selected-logos.webp"
+              alt="Selected logo designs for Dazy & Co., AvaClean, KONXEPTS, Odd Neighbour, Seamlessly Black, and Wigs by Tia Tee"
+              loading="lazy"
+            >
+          </div>
+          <div class="board-caption">
+            <h3>Selected Logo Designs</h3>
+            <p>A collection of distinct brand identities</p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="contact">
-      <div class="container">
-        <h2>Have a Project in Mind?</h2>
-        <p>Let's discuss how thoughtful design can support your business.</p>
-        <a class="button" href="../index.html#contact">Work With Me</a>
+    <section class="work-section" id="marketing">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / Content and communication</p>
+          <h2>Marketing Materials</h2>
+        </div>
+        <span class="section-number">02 PROJECTS</span>
       </div>
+
+      <div class="marketing-grid">
+        <article class="project-card">
+          <div class="marketing-image">
+            <img
+              src="odd-social-mockup.webp"
+              alt="The Odd Social social media design mockup"
+              loading="lazy"
+            >
+          </div>
+          <div class="project-info">
+            <p class="project-type">Social Media</p>
+            <h3>The Odd Social</h3>
+            <p>Social content with a cohesive, considered visual style.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="marketing-image portrait">
+            <img
+              src="wedding-invitation.webp"
+              alt="Wedding invitation design for Georgia and Timothy"
+              loading="lazy"
+            >
+          </div>
+          <div class="project-info">
+            <p class="project-type">Print &amp; Event Design</p>
+            <h3>Wedding Invitation</h3>
+            <p>A personal invitation with an elegant, timeless feel.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p class="eyebrow">Have a project in mind?</p>
+      <h2>Let's create something thoughtful.</h2>
+      <p>
+        Have a business or idea you'd love to bring to life?
+        I'd love to hear what you're working on.
+      </p>
+      <a class="button" href="mailto:hello@talaijah.com">LET'S TALK</a>
     </section>
   </main>
 
-  <footer>
-    <div class="container">© 2026 TALAIJAH. All rights reserved.</div>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Talaijah. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
