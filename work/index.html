@@ -131,6 +131,44 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .portfolio-nav {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+      border-bottom: 1px solid var(--line);
+    }
+    
+    .portfolio-nav a {
+      position: relative;
+      padding-block: 0.4rem;
+      color: var(--charcoal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    
+    .portfolio-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.2rem;
+      width: 0;
+      height: 1px;
+      background: var(--charcoal);
+      transition: width 0.25s ease;
+    }
+    
+    .portfolio-nav a:hover::after,
+    .portfolio-nav a:focus-visible::after {
+      width: 100%;
+    }
+
     .eyebrow {
       margin: 0 0 18px;
       color: var(--accent);
