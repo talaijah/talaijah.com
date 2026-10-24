@@ -218,55 +218,65 @@
       font-size: 12px;
     }
 
-.brand-stack {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 26px;
-  row-gap: 40px;
-}
-
-.brand-stack > article:first-child {
-  grid-column: 1 / -1;
-}
-
-.brand-stack > article:first-child .brand-board img {
-  width: 100%;
-  height: auto;
-}
-
-.brand-logo-item {
-  min-width: 0;
-  text-align: center;
-}
-
-.brand-logo-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 220px;
-}
-
-.brand-logo-image img {
-  width: 100%;
-  height: 100%;
-  max-width: 300px;
-  max-height: 150px;
-  object-fit: contain;
-  object-position: center;
-}
-
-.brand-logo-caption {
-  margin-top: 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-}
-
-.brand-logo-caption h3 {
-  margin: 0;
-  font-size: 23px;
-  line-height: 1.2;
-}
+    .brand-stack {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 26px;
+      row-gap: 40px;
+    }
+    
+    .brand-stack > article:first-child {
+      grid-column: 1 / -1;
+    }
+    
+    .brand-stack > article:first-child .brand-board img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .brand-logo-item {
+      min-width: 0;
+      text-align: center;
+    }
+    
+    .brand-logo-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 220px;
+      border: 1px solid var(--line);
+      background: transparent;
+    }
+    
+    .brand-logo-image img {
+      width: 90%;
+      height: 90%;
+      max-width: 400px;
+      max-height: 190px;
+      object-fit: contain;
+      object-position: center;
+    }
+    
+    .brand-logo-caption {
+      margin-top: 16px;
+      padding-bottom: 14px;
+      text-align: center;
+    }
+    
+    .brand-logo-caption::after {
+      content: "";
+      display: block;
+      width: 34px;
+      margin: 12px auto 0;
+      border-bottom: 1px solid var(--line);
+    }
+    
+    .brand-logo-caption h3 {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.2;
+    }
 
     .brand-board {
       overflow: hidden;
