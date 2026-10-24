@@ -221,8 +221,17 @@
 .brand-stack {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 32px;
+  column-gap: 26px;
   row-gap: 40px;
+}
+
+.brand-stack > article:first-child {
+  grid-column: 1 / -1;
+}
+
+.brand-stack > article:first-child .brand-board img {
+  width: 100%;
+  height: auto;
 }
 
 .brand-logo-item {
