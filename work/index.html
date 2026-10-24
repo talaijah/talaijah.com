@@ -488,18 +488,26 @@
     @media (max-width: 560px) {
       .nav {
         width: calc(100% - 32px);
-        min-height: 72px;
-        gap: 14px;
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.7rem;
+        padding: 0.9rem 0;
       }
-
+      
       .logo img {
-        width: 112px;
+        width: 128px;
+        max-height: 54px;
       }
 
       .nav-links {
+        width: 100%;
+        justify-content: center;
         gap: 14px;
         font-size: 10px;
+        letter-spacing: 0.1em;
       }
+
 
       .nav-contact {
         padding: 7px 9px;
