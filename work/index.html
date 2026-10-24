@@ -218,10 +218,46 @@
       font-size: 12px;
     }
 
-    .brand-stack {
-      display: grid;
-      gap: 30px;
-    }
+.brand-stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 32px;
+  row-gap: 40px;
+}
+
+.brand-logo-item {
+  min-width: 0;
+  text-align: center;
+}
+
+.brand-logo-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 220px;
+}
+
+.brand-logo-image img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.brand-logo-caption {
+  margin-top: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-logo-caption h3 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.2;
+}
 
     .brand-board {
       overflow: hidden;
@@ -395,6 +431,23 @@
       .board-caption p {
         margin-top: 5px;
       }
+      .brand-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 30px;
+      }
+      
+      .brand-logo-image {
+        height: 150px;
+      }
+      
+      .brand-logo-image img {
+        max-height: 110px;
+      }
+      
+      .brand-logo-caption h3 {
+        font-size: 19px;
+      }
 
       .marketing-image {
         padding: 10px;
@@ -505,17 +558,57 @@
           </div>
         </article>
 
-        <article>
-          <div class="brand-board">
-            <img
-              src="selected-logos.webp"
-              alt="Selected logo designs for Dazy & Co., AvaClean, KONXEPTS, Odd Neighbour, Seamlessly Black, and Wigs by Tia Tee"
-              loading="lazy"
-            >
+       <article class="brand-logo-item">
+          <div class="brand-logo-image">
+            <img src="dazyco-logo.svg" alt="Dazy & Co. logo" loading="lazy">
           </div>
-          <div class="board-caption">
-            <h3>Selected Logo Designs</h3>
-            <p>A collection of distinct brand identities</p>
+          <div class="brand-logo-caption">
+            <h3>Dazy & Co.</h3>
+          </div>
+        </article>
+        
+        <article class="brand-logo-item">
+          <div class="brand-logo-image">
+            <img src="avaclean-logo.svg" alt="AvaClean logo" loading="lazy">
+          </div>
+          <div class="brand-logo-caption">
+            <h3>AvaClean</h3>
+          </div>
+        </article>
+        
+        <article class="brand-logo-item">
+          <div class="brand-logo-image">
+            <img src="konxepts-logo.svg" alt="KONXEPTS logo" loading="lazy">
+          </div>
+          <div class="brand-logo-caption">
+            <h3>KONXEPTS</h3>
+          </div>
+        </article>
+        
+        <article class="brand-logo-item">
+          <div class="brand-logo-image">
+            <img src="oddneighbour-logo.svg" alt="Odd Neighbour logo" loading="lazy">
+          </div>
+          <div class="brand-logo-caption">
+            <h3>Odd Neighbour</h3>
+          </div>
+        </article>
+        
+        <article class="brand-logo-item">
+          <div class="brand-logo-image">
+            <img src="seamlesslyblack-logo.svg" alt="Seamlessly Black logo" loading="lazy">
+          </div>
+          <div class="brand-logo-caption">
+            <h3>Seamlessly Black</h3>
+          </div>
+        </article>
+        
+        <article class="brand-logo-item">
+          <div class="brand-logo-image">
+            <img src="wigsbytiatee-logo.svg" alt="Wigs by Tia Tee logo" loading="lazy">
+          </div>
+          <div class="brand-logo-caption">
+            <h3>Wigs by Tia Tee</h3>
           </div>
         </article>
       </div>
