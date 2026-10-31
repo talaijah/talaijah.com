@@ -299,8 +299,59 @@
       margin: 1rem 0 1.25rem;
     }
 
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.7rem 0 1.6rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-pillar {
+      min-width: 0;
+    }
+
+    .pillar-number {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .about-pillar h4 {
+      margin: 0 0 0.25rem;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .about-pillar p {
+      font-size: clamp(0.72rem, 1.15vw, 0.88rem);
+      line-height: 1.45;
+    }
+
     .mission {
       color: var(--muted);
+    }
+
+    @media (max-width: 520px) {
+      .about-pillars {
+        gap: 0.65rem;
+      }
+
+      .about-pillar h4 {
+        font-size: 1.15rem;
+      }
+
+      .about-pillar p {
+        font-size: 0.7rem;
+      }
     }
     
     .about-copy p + p {
@@ -673,6 +724,25 @@
       <h3 class="about-subheading">
         I bridge the gap between creative design and business growth.
       </h3>
+
+      <div class="about-pillars" aria-label="How branding, marketing, and design work together">
+        <article class="about-pillar">
+          <span class="pillar-number">01</span>
+          <h4>Branding</h4>
+          <p>Is how people see you.</p>
+        </article>
+        <article class="about-pillar">
+          <span class="pillar-number">02</span>
+          <h4>Marketing</h4>
+          <p>Is how they find you.</p>
+        </article>
+        <article class="about-pillar">
+          <span class="pillar-number">03</span>
+          <h4>Design</h4>
+          <p>Is how you stand out.</p>
+        </article>
+      </div>
+
       <p>
         As a freelance designer and marketer, I help businesses, entrepreneurs, and
         growing brands stand out online through thoughtful design,
